@@ -54,7 +54,8 @@ public class Ground1Control : MonoBehaviour
         zbj = zb;
         xyy = xy;
     }
-public void BoostSpeed()
+    
+    public void BoostSpeed()
     {
         currentSpeed = boostedSpeed;
     }

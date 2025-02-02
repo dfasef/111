@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Sping : MonoBehaviour
+public class Spring : MonoBehaviour
 {
 
     public Ground1Control ground1Control;
@@ -24,6 +24,6 @@ public class Sping : MonoBehaviour
         }
     }
 
-    // 如果需要动态调整跳跃力度，可以提供类似这样的方法
+    // 如果需要动态调整跳跃力度，可以提供类似这样的方法9
     
 }

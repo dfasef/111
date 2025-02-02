@@ -58,8 +58,8 @@ public class KeyToNext : MonoBehaviour
     }
     void Scene2update()
     {
-        Ground1Control.Instance.DataUpdate(-308f, 557.93f);
-       
+        Ground1Control.Instance.DataUpdate(-340f, 557.93f);
+       PlayerControl.Instance.can2jump = true;
     }
 
     void Scene3update()

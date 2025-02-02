@@ -8,6 +8,7 @@ TagManager:
   - Die
   - Circle
   - Key2
+  - Sping
   layers:
   - Default
   - TransparentFX

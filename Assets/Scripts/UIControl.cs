@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class UIControl : MonoBehaviour
 {
     public Text Exit;
@@ -21,6 +22,7 @@ public class UIControl : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        
     }
     void Start()
     {
