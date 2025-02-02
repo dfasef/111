@@ -6,9 +6,8 @@ TagManager:
   tags:
   - Ground
   - Die
-  - star
   - Circle
-  - Gold
+  - Key2
   layers:
   - Default
   - TransparentFX

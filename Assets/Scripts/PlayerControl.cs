@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using static KeyToNext;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -105,25 +107,19 @@ public class PlayerControl : MonoBehaviour
             IsGround = false;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag ("Circle"))
-        {
-           
-            AudioManager.Instance.Play("圈");
-        }
-        else if (collision.CompareTag ("star"))
-        {
-            
-            AudioManager.Instance.Play("星");
-        }
 
-        else if(collision.CompareTag("Gold"))
+    public void SwitchScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Key2"))
         {
-            
-            AudioManager.Instance.Play("金币");
+            SwitchScene("Scene2"); // "NextSceneName" 替换为你想切换到的实际场景名称
+            KeyToNext.Instance.currentScene = SceneName.Scene2;
         }
     }
-    
-    
+
 }
