@@ -28,10 +28,10 @@ public class Ground1Control : MonoBehaviour
             //按照速度向左侧移动
             pos.x -= currentSpeed * Time.deltaTime;
             //判断是否超出屏幕
-            if (pos.x < -100f)
+            if (pos.x < -200f)
             {
                 //把图片移到最右侧
-                pos.x += 176.1f;
+                pos.x += 351.9f;
             }
             //位置赋给子物体
             tran.position = pos;

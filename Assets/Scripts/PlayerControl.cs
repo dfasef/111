@@ -46,7 +46,7 @@ public class PlayerControl : MonoBehaviour
     //跳跃
     public void Jump()
     {
-        Debug.Log("Jump");
+        
         //如果在地面上，允许跳跃
         if (IsGround == true)
         {
