@@ -114,8 +114,8 @@ public class PlayerControl : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //判断如果是沟和怪
-        if (collision.collider.tag == "Die")
-        {
+        if (collision.collider.tag == "Die" || collision.collider.tag == "Enemy")
+        { 
             Die = true;
             //播放一次死亡动画
             anim.SetBool("IsDie", true);

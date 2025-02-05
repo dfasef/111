@@ -15,6 +15,8 @@ public class KeyToNext : MonoBehaviour
 {
     public static KeyToNext Instance;
     public SceneName currentScene = SceneName.Scene1;
+
+    
     private void Awake()
     {
         // 如果实例已经存在，则销毁当前对象，保证只有一个实例
@@ -49,13 +51,17 @@ public class KeyToNext : MonoBehaviour
                 break;
             
         }
-        
-    }
+       
 
+    }
+    
+   
     void Scene1update()
     {
         Ground1Control.Instance.DataUpdate(-200f,351.9f);
+       
     }
+   
     void Scene2update()
     {
         Ground1Control.Instance.DataUpdate(-340f, 557.93f);

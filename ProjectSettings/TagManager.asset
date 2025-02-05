@@ -9,6 +9,8 @@ TagManager:
   - Circle
   - Key2
   - Sping
+  - AirToNext
+  - EnemyObs
   layers:
   - Default
   - TransparentFX
