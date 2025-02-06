@@ -1,52 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemyControl : MonoBehaviour
 {
     public    Rigidbody2D rb;
-    public float jumpSpeed = 200f;
-    public Ground1Control ground1Control;
-    // Start is called before the first frame update
+    
+    bool fly = false;
+    private Vector2 targetPosition;
+
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); // 在游戏对象上获取Rigidbody2D组件，以便控制物理行为。
+        
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void FixedUpdate()
     {
-        
-        if (collision.collider.CompareTag("EnemyObs"))
+        if (fly)
         {
-           
-            Jump();
+            targetPosition = new Vector2(transform.position.x, -9.2f);
         }
-        if (collision.collider.tag == "Ground")
+        else
         {
-            //IsGround = true;
-            //anim.SetBool("IsJump", false);
-
-            // 玩家着地，重置背景速度
-            if (ground1Control != null)
-            {
-               
-                ground1Control.ResetSpeed();
-            }
-
+            targetPosition = new Vector2(transform.position.x, -12.25f);
         }
 
+        rb.MovePosition(Vector2.Lerp(rb.position, targetPosition, Time.fixedDeltaTime*5));
     }
 
-    void Jump()
-    {
-        
-        rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-    }
     
-        
-        // Update is called once per frame
-        void Update()
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         
+        if (other.gameObject.CompareTag("EnemyObs"))
+        {
+            fly = true;
+            
+        }
     }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyObs"))
+        {
+            fly = false;
+        }
+    }
+
 }
