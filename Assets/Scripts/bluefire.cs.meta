@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 842e949cb31986744ae04dd8a47aa533
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rb: {fileID: 8031150121708466772, guid: 9e6803b72cbeb79428d568602d6d01c6, type: 3}
+  - playerTransform: {fileID: 5473864915753886719, guid: 6e6503bb0191f5d40ad1a9ef78d8f076, type: 3}
+  - EnemyTransform: {fileID: 9020355943563487608, guid: ce22948be1445cd4c88db77125c4de00, type: 3}
+  - anim: {fileID: 5531021642325512098, guid: 9e6803b72cbeb79428d568602d6d01c6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

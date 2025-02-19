@@ -14,7 +14,7 @@ public class Ground1Control : MonoBehaviour
     public float zbj;
     public float xyy;
 
-    public GameObject GroundPrefabs;
+    
 
     public static Ground1Control Instance;
     void Awake()

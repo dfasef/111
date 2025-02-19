@@ -13,7 +13,21 @@ public class AudioManager : MonoBehaviour
     public AudioSource msPlayer;
 
 
-
+    private void Awake()
+    {
+        // 如果实例已经存在，则销毁当前对象，保证只有一个实例
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            // 保存唯一的实例
+            Instance = this;
+            // 确保在场景切换时不会被销毁
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
     void Start()
     {
         //单例
@@ -39,15 +53,14 @@ public class AudioManager : MonoBehaviour
     }
     void Update()
     {
-        if (PlayerControl.Instance.Die)
-        {
-            msPlayer.Stop();
-        }
-        
         
     }
     
-    
+    public void PlayAgain()
+    {
+        msPlayer.time = 0; // 将播放位置重置到开头
+        msPlayer.Play();
+    }
    
     
 

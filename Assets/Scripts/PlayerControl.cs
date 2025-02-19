@@ -52,7 +52,17 @@ public class PlayerControl : MonoBehaviour
         
     }
 
-    
+    public void Died()
+    {
+        Die = true;
+        
+        //播放一次死亡动画
+        anim.SetBool("IsDie", true);
+        //播放死亡音效
+        AudioManager.Instance.Play("Boss死了");
+        
+        
+    }
     //跳跃
     public void Jump()
     {
@@ -109,18 +119,16 @@ public class PlayerControl : MonoBehaviour
 
     }
 
-
+    
     //发生碰撞
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //判断如果是沟和怪
         if (collision.collider.tag == "Die" || collision.collider.tag == "Enemy")
-        { 
-            Die = true;
-            //播放一次死亡动画
-            anim.SetBool("IsDie", true);
-            //播放死亡音效
-            AudioManager.Instance.Play("Boss死了");
+        {
+            
+            Died();
+            
         }
         //如果是地面
         if (collision.collider.tag == "Ground")
@@ -165,6 +173,9 @@ public class PlayerControl : MonoBehaviour
             SwitchScene("Scene2"); // "NextSceneName" 替换为你想切换到的实际场景名称
             KeyToNext.Instance.currentScene = SceneName.Scene2;
         }
+
     }
+   
+    
 
 }
