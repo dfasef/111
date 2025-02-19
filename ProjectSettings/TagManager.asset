@@ -11,6 +11,7 @@ TagManager:
   - Sping
   - AirToNext
   - EnemyObs
+  - Key3
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     //刚体组件
     public Rigidbody2D rb;
     //动画组件
-   public Animator anim;
+    public Animator anim;
     public int MaxJumps = 2;//最大跳跃次数
     private int remainingJumps; // 剩余跳跃次数
     public  bool  can2jump=false;
@@ -57,7 +57,7 @@ public class PlayerControl : MonoBehaviour
         Die = true;
         
         //播放一次死亡动画
-        anim.SetBool("IsDie", true);
+        anim.SetTrigger("Die");
         //播放死亡音效
         AudioManager.Instance.Play("Boss死了");
         
@@ -168,10 +168,16 @@ public class PlayerControl : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.gameObject.CompareTag("Key2"))
         {
             SwitchScene("Scene2"); // "NextSceneName" 替换为你想切换到的实际场景名称
             KeyToNext.Instance.currentScene = SceneName.Scene2;
+        }
+        else if (other.gameObject.CompareTag("Key3"))
+        {
+            SwitchScene("Scene3");
+            KeyToNext.Instance.currentScene = SceneName.Scene3;
         }
 
     }

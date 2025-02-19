@@ -27,10 +27,22 @@ public class fire : MonoBehaviour
         // 检查碰撞对象是否是玩家
         if (other.gameObject.CompareTag("Player"))
         {
-            // 这里可以调用任何需要执行的逻辑，比如减少玩家的生命值等
-            PlayerControl.Instance.Died();
-            // 如果使用了对象池，则将火球返回池中
-            DestroyFire();
+
+            Shield Shield = other.GetComponent<Shield>();
+
+            // 如果玩家有护盾
+            if (Shield != null && Shield.IsShieldActive())
+            {
+                DestroyFire();
+            }
+            else
+            {
+                // 这里可以调用任何需要执行的逻辑，比如减少玩家的生命值等
+                PlayerControl.Instance.Died();
+                // 如果使用了对象池，则将火球返回池中
+                DestroyFire();
+            }
+            
         }
         
     }
