@@ -28,6 +28,5 @@ public class Spring : MonoBehaviour
         }
     }
 
-    // 如果需要动态调整跳跃力度，可以提供类似这样的方法9
     
 }
