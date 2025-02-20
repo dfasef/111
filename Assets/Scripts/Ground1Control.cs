@@ -59,6 +59,10 @@ public class Ground1Control : MonoBehaviour
     {
         currentSpeed = boostedSpeed;
     }
+    public void Boost2Speed()
+    {
+        currentSpeed = 1.5f*boostedSpeed;
+    }
 
     // 恢复默认速度方法
     public void ResetSpeed()

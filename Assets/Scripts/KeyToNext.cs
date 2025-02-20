@@ -74,6 +74,7 @@ public class KeyToNext : MonoBehaviour
 
     void Scene3update()
     {
+        Ground1Control.Instance.DataUpdate(-230f, 529.2f);
         PlayerControl.Instance.can2jump = true;
         bluefire.Instance.canFire = true;
         Shield.Instance.Block = true;

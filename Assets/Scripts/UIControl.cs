@@ -53,6 +53,7 @@ public class UIControl : MonoBehaviour
         Middle.SetActive(false);
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         PlayerControl.Instance.can2jump = false;
+        Shield.Instance.Block = false;
         AudioManager.Instance.PlayAgain();
     }
     public void  Pause()

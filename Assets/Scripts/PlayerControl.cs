@@ -45,6 +45,7 @@ public class PlayerControl : MonoBehaviour
         //如果按了空格键
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            
             //跳跃
             Jump();
             
@@ -68,12 +69,13 @@ public class PlayerControl : MonoBehaviour
     {
         
         //如果在地面上，允许1次跳跃
-        if (IsGround == true&&can2jump==false)
+        if (IsGround&&!can2jump)
         {
             if (Die)
             {
                 return;
             }
+            
             //给刚体一个向上的力
             //rb.AddForce(JumpForce, ForceMode2D.Impulse);
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
@@ -144,13 +146,25 @@ public class PlayerControl : MonoBehaviour
             }
 
          }
-        else if (collision.collider.CompareTag("Sping"))
+        else if (collision.collider.CompareTag("Sping") )
         {
             IsGround = true;
             remainingJumps = MaxJumps;
         }
-
+        else if(collision.collider.tag=="AddSpeed")
+        {   
+            IsGround = true;
+            anim.SetBool("IsJump", false);
+            ground1Control.Boost2Speed();
+            if (ground1Control != null)
+            {
+                remainingJumps = MaxJumps;
+                
+            }
+        }
     }
+
+    
     //离开碰撞
     private void OnCollisionExit2D(Collision2D collision)
     {

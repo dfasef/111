@@ -78,7 +78,7 @@ MonoBehaviour:
   can2jump: 0
   Die: 0
   ground1Control: {fileID: 0}
-  jumpSpeed: 12
+  jumpSpeed: 14
 --- !u!61 &6299128703543954165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ Rigidbody2D:
   m_Mass: 1.2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3.8
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
