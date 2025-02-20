@@ -29,6 +29,10 @@ public class Ground1Control : MonoBehaviour
     
     void Update()
     {
+        //if (PlayerControl.Instance.Die)
+        //{
+        //    return;
+        //}
         //遍历背景，子物体
         foreach (Transform tran in transform)
         {
